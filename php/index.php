@@ -4,9 +4,5 @@
 	
 	include "front_p.html";
 
-	
-
-	
-
 ?>
 

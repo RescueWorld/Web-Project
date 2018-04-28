@@ -1,6 +1,6 @@
 <?php
 
-	include_once "db.php";
+	include_once "php/db.php";
 	
 	include "front_p.html";
 

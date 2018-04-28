@@ -10,7 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link href="main1.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/main1.css" rel="stylesheet" type="text/css"/>
     <title>Hello, world!</title>
   </head>
   <body>
@@ -28,10 +28,10 @@
             <a class="nav-link" href="front.php">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="refugee_signup.html">Add refugee<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../refugee_signup.html">Add refugee<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="aid.html">Ask for aid<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../aid.html">Ask for aid<span class="sr-only">(current)</span></a>
           </li>          
     
 
@@ -93,7 +93,7 @@
 	$age=mysqli_real_escape_string($conn,$_POST['search_age']);
   if(empty($name1) && (empty($name2)) && empty($age))
   {
-
+    echo '<h2>Please Fill Name or Age to be searched</h2>';
   }elseif(!empty($name1) && !empty($name2) && empty($age))
   {
 
@@ -143,7 +143,7 @@
   }elseif(!empty($name1) && !empty($name2) && !empty($age))
   {
 
-  $sql="SELECT * FROM WHERE F_NAME='$name1' AND L_NAME='$name2' AND AGE='$age'";
+  $sql="SELECT * FROM refugee WHERE F_NAME='$name1' AND L_NAME='$name2' AND AGE='$age'";
   $result=mysqli_query($conn,$sql);
   $resultcount=mysqli_num_rows($result);
   if($resultcount<1)
@@ -156,7 +156,7 @@
       echo '<div class="search_back">
                 <div class="row">
                   <div class="col-sm-12 col-md-4">
-                    <img src="upload/'.$row['IMAGE'].'">;
+                    <img src="../upload/'.$row['IMAGE'].'">;
                   </div>
   
                   <div class="col-sm-12 col-md-8">
@@ -171,7 +171,7 @@
                             <br>
                             <p>Gender:'.$row['GENDER'].'</p>
                             <br>
-                            <p>Location:'.$row['LOCATION'].'</p>
+                            <p>Location:'.$row['PLACE'].'</p>
                             <br>
                             
 

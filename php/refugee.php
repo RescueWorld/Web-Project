@@ -16,7 +16,7 @@
 			//error
 		}else
 		{	
-		$target_dir = "upload/";
+		$target_dir = "../upload/";
 		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -53,7 +53,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
 	$filen=uniqid('',true).'.'.$imageFileType;
-	$t='upload/'.$filen;
+	$t='../upload/'.$filen;
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $t)){ 
         echo "hey";
     } else {

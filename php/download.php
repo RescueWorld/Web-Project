@@ -23,12 +23,12 @@
 </form>
 <?php 
    //displaying files
-    $files = scandir("upload");
+    $files = scandir("../upload");
     print_r($files);
     $counter=0;
     for($a=2;$a<count($files);$a++)
     {
-     echo '<img src="upload/'.$files[$a].'">';
+     echo '<img src="../upload/'.$files[$a].'">';
     }
 
     
